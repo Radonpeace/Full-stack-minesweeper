@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<%- include ('./partials/head' ,{ title: 'Login' }) %>
+<body>
+<div class="container">
+<div class="col-sm-6 col-sm-offset-3">
+    
+    <h1><span class="fa fa-sign-in"></span> Login</h1>
+    <button class="btn btn-primary" style="position: absolute; top: 25px; left: 5px;" onclick="window.location.href='/'">Back to Home</button>
+
+    <!-- LOGIN FORM -->
+    <form action="/login" method="post">
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" name="username">
+            <% if (usernameError && usernameError.length > 0) { %>
+                <small class="form-text text-danger"><%= usernameError %></small>
+            <% } %>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email">
+            <% if (emailError && emailError.length > 0) { %>
+                <small class="form-text text-danger"><%= emailError %></small>
+            <% } %>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password">
+            <% if (passwordError && passwordError.length > 0) { %>
+                <small class="form-text text-danger"><%= passwordError %></small>
+            <% } %>
+        </div>
+
+        <button type="submit" class="btn btn-warning btn-lg">Login</button>
+    </form>
+
+    <hr>
+
+    <p>Need an account? <a href="/signup">Signup</a></p>
+    <p>Or go <a href="/">home</a>.</p>
+
+    <div class="text-center">
+        <p>A demo by <a href="http://scotch.io">Scotch</a>.</p>
+        <p>Visit the <a href="http://scotch.io/tutorials/javascript/easy-node-authentication-setup-and-local">tutorial</a>.</p>
+    </div>
+
+</div>
+</div>
+</body>
+</html>

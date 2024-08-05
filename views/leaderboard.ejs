@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('./partials/head' ,{ title: 'Leaderboard' }) %>
+<body style="margin: 20px;font-size: large;">
+    <div style="display: flex;justify-content: space-between;align-items: center;margin: 20px;">
+        <h1 style="color: rgb(43, 43, 227);">Leaderboard</h1>
+        <button class="btn btn-primary" onclick="window.location.href='/'">Back to Home</button>
+    </div>
+    <table class="table table-hover" style="margin-left: 20px;">
+        <thead>
+            <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Username</th>
+                <th scope="col">Time Taken</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0; i<leaderboard.length; i++) { %>
+                <tr>
+                    <th scope="row"><%= i+1 %></th>
+                    <td><a><%= leaderboard[i].username %></a></td>
+                    <td><%= leaderboard[i].timeTaken %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>
